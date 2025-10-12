@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    
+    <!-- Prevent HTML caching for fresh deployments -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="googlebot" content="noindex, nofollow" />
+    <meta name="description" content="A curated nostalgia ride that is like biriyani for the mind! #DD40" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="MentalBiriyani" />
+    <link rel="manifest" href="./manifest.json?v=1760280244213" />
+    <link rel="icon" type="image/x-icon" href="./favicon.ico" />
+    <link rel="icon" type="image/png" sizes="192x192" href="./icon-192.png" />
+    <link rel="icon" type="image/png" sizes="512x512" href="./icon-512.png" />
+    <link rel="apple-touch-icon" href="./icon-192.png" />
+    <title>MentalBiriyani - A curated nostalgia ride</title>
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="MentalBiriyani" />
+    <meta property="og:description" content="A curated nostalgia ride that is like biriyani for the soul! #DD40" />
+    <meta property="og:image" content="./og-image.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="MentalBiriyani" />
+    <meta name="twitter:description" content="A curated nostalgia ride that is like biriyani for the mind! #DD40" />
+    <script type="module" crossorigin src="/MentalBiriyani/assets/index-DaW5yE0V.js?v=1760280244213"></script>
+    <link rel="stylesheet" crossorigin href="/MentalBiriyani/assets/index-arbW1BbK.css?v=1760280244213">
+  </head>
+  <body class="overscroll-none">
+    <div id="root"></div>
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('./sw.js?v=1760280244213')
+            .then(registration => console.log('SW registered:', registration))
+            .catch(err => console.log('SW registration failed:', err));
+        });
+      }
+    </script>
+  </body>
+</html>
