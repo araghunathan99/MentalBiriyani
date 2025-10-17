@@ -1,5 +1,5 @@
 // Dynamic cache name with timestamp - updates on each deployment
-const CACHE_VERSION = '1760670881889'; // Will be replaced during build
+const CACHE_VERSION = '1760675603104'; // Will be replaced during build
 const CACHE_NAME = `mental-biriyani-${CACHE_VERSION}`;
 
 // Only cache the app shell - let HTTP cache-busting handle assets
@@ -18,14 +18,14 @@ self.addEventListener('install', (event) => {
 self.addEventListener('fetch', (event) => {
   const url = new URL(event.request.url);
   
-  // Skip caching for media files (videos, images, audio) - let browser cache handle them
-  // This is crucial for iOS PWA where we rely on browser HTTP cache
+  // Skip service worker entirely for media files - critical for iOS PWA
+  // Let the browser handle these requests directly without any service worker intervention
   const mediaExtensions = ['.mp4', '.mov', '.webm', '.jpg', '.jpeg', '.png', '.gif', '.mp3', '.wav', '.m4a'];
   const isMediaFile = mediaExtensions.some(ext => url.pathname.toLowerCase().endsWith(ext));
   
   if (isMediaFile) {
-    // Pass through to network, no service worker caching for media
-    event.respondWith(fetch(event.request));
+    // Don't intercept media requests at all - return immediately
+    // This allows iOS PWA to use native browser caching
     return;
   }
   
